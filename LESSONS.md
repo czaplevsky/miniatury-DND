@@ -87,7 +87,7 @@ curl -sS "$HTTPS_PROXY/__agentproxy/status" | head
 
 ## 4. Rekomendowany pipeline v2.0
 
-Skrypty: `dnd-mini/pipeline/`. Środowiska: `hyvenv` (torch, diffusers, Hunyuan3D-2, rembg), `bvenv` (bpy 5.0.1 w osobnym venv, bo globalny numpy 2.x psuje bpy; trimesh, scipy, manifold3d).
+Skrypty: `pipeline/`. Środowiska: `hyvenv` (torch, diffusers, Hunyuan3D-2, rembg), `bvenv` (bpy 5.0.1 w osobnym venv, bo globalny numpy 2.x psuje bpy; trimesh, scipy, manifold3d).
 
 | # | Krok | Polecenie | Czas | Limit GPU |
 |---|---|---|---|---|
