@@ -34,3 +34,4 @@ Figurka do druku żywicznego (MSLA) w skali 32 mm heroic: postać 1,90 m, czyli 
 - `scripts/`: wcześniejsze skrypty (v1/v2, Space'y HF)
 - `renders/`: rendery i porównania wersji
 - `HANDOFF.md`, `PLAN.md`: kontekst i plan
+- `LESSONS.md`: wnioski i playbook na kolejne figurki
