@@ -1,7 +1,7 @@
 # Figurka D&D z concept artu: retrospektywa i playbook
 
 Dla przyszłych sesji Claude Code (kontener w chmurze: 4 CPU, 15 GB RAM, bez GPU) i dla użytkownika.
-Źródła: `dnd-mini/HANDOFF.md`, `PLAN.md`, `v3/LOG.md` (numery prób poniżej to `#N` z tego logu), `v3/PIPELINE.md`, `scratchpad/research/PLAN.md`, rendery w `dnd-mini/renders/`.
+Źródła: `models/bandaged-druid/HANDOFF.md`, `pipeline/RESEARCH_PLAN.md`, `models/bandaged-druid/LOG.md` (numery prób poniżej to `#N` z tego logu), `pipeline/PIPELINE.md`, `pipeline/RESEARCH_PLAN.md`, rendery w `models/bandaged-druid/renders/`.
 
 ---
 
@@ -87,7 +87,7 @@ curl -sS "$HTTPS_PROXY/__agentproxy/status" | head
 
 ## 4. Rekomendowany pipeline v2.0
 
-Skrypty: `dnd-mini/v3/scripts/`. Środowiska: `hyvenv` (torch, diffusers, Hunyuan3D-2, rembg), `bvenv` (bpy 5.0.1 w osobnym venv, bo globalny numpy 2.x psuje bpy; trimesh, scipy, manifold3d).
+Skrypty: `dnd-mini/pipeline/`. Środowiska: `hyvenv` (torch, diffusers, Hunyuan3D-2, rembg), `bvenv` (bpy 5.0.1 w osobnym venv, bo globalny numpy 2.x psuje bpy; trimesh, scipy, manifold3d).
 
 | # | Krok | Polecenie | Czas | Limit GPU |
 |---|---|---|---|---|
