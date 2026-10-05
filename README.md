@@ -1,6 +1,6 @@
 # miniatury-DND: figurki D&D do druku
 
-Warsztat na figurki D&D do druku żywicznego, robione z concept artu. Skala 32 mm heroic: postać 1,90 m ma 36 mm, podstawka 25 × 3 mm.
+Warsztat na figurki D&D robione z concept artu. Drukarka użytkownika: Banach 3D (FDM), więc do każdej figurki oddajemy gotowy G-code. Skala 32 mm heroic: postać 1,90 m ma 36 mm, podstawka 25 × 3 mm.
 
 - `CLAUDE.md`: zasady i pamięć projektu (Claude czyta je na starcie każdej sesji)
 - `LESSONS.md`: retrospektywa pierwszej figurki i playbook
