@@ -1,15 +1,41 @@
-# D&D minis: pamięć projektu (czytaj na starcie każdej sesji)
+# miniatury-DND: centrum dowodzenia (czytaj na starcie każdej sesji)
 
-Repo na figurki D&D do druku żywicznego, robione z concept artu. Każda postać ma folder `models/<nazwa>/`. Wspólne skrypty są w `pipeline/`. Pełne wnioski: `LESSONS.md`. Użytkownik pisze po polsku, często z telefonu; chce wyników, nie wymówek.
+Repo `czaplevsky/miniatury-DND` to jedyne miejsce na figurki D&D robione z concept artu. Stare lokalizacje (DASHBOARD, `dnd-bandaged-druid-mini`) są nieaktualne.
+- Każda postać ma folder `models/<nazwa>/`, a wspólne skrypty są w `pipeline/`.
+- Pełne wnioski: `LESSONS.md`.
+- Użytkownik pisze po polsku, często z telefonu, i chce wyników, nie wymówek.
+- Zmiany commituj na `main`, chyba że użytkownik poprosi inaczej.
+
+## Drukarka użytkownika: BANACH 3D (FDM, nie żywica!)
+- Polska drukarka szkolna z filamentu, najpewniej **Banach School** lub **Rapid** (dokładny model niepotwierdzony, zapytaj):
+  - stół 210 × 210 × 210 mm, dysza 0,4 mm,
+  - temperatury 180–240/260 °C,
+  - filament PLA/PET-G 1,75 mm,
+  - pliki wysyła się przez Wi-Fi, USB albo kartę SD.
+- **Drukuje wyłącznie `.gcode`.** Pliku `.3mf` ani `.stl` nie wydrukuje. Wysłany 3MF „ruszył” bez grzania dyszy (2026-10-05).
+- Oficjalny slicer to **Ultimaker Cura z profilem Banach** (banach3d.pl/do-pobrania). Awaryjnie PrusaSlicer CLI z profilem `models/bandaged-druid/print/gcode_fdm/banach_school_pla.ini` (generyczny Marlin, stół 210, PLA 210/60).
+- Każdy oddawany G-code sprawdź przed wysłaniem:
+  - `M140/M104/M190/M109` z niezerowym S, ustawione przed pierwszą ekstruzją,
+  - model mieści się na stole,
+  - podany czas druku i ilość filamentu.
+- Mini 36 mm na dyszy 0,4 traci twarz, palce i fakturę, więc proponuj **skalę 150%** albo druk żywiczny w usłudze.
 
 ## Standard figurki
 - Skala 32 mm heroic: postać 1,90 m ma **36 mm od podeszwy do czubka głowy**.
 - Podstawka okrągła **25 × 3 mm** (Medium), zintegrowana, top na z = 3. Wszystko mieści się w promieniu 12,5 mm.
-- Druk żywiczny, więc:
+- Geometria spełnia normy żywicy (bezpieczne też dla FDM po powiększeniu):
   - ścianki ≥ 0,4 mm (cel 0,6),
   - rekwizyty ≥ 2 mm,
   - detal (rowki, paski) **≥ 0,15 mm**, bo płytszy znika.
-- Eksport: jedna szczelna bryła; 3MF < 30 MB (limit wysyłki w czacie) + STL w zip.
+- Wynik, czyli „definition of done”:
+  - jedna szczelna bryła,
+  - 3MF < 30 MB (limit wysyłki w czacie) + STL w zip,
+  - **G-code dla Banacha** w 100% i 150%.
+
+## Start nowej sesji
+- Kontener jest ulotny: scratchpad, venvy i wagi modeli przepadają.
+- Odtwórz je: `bash pipeline/setup_env.sh "$SCRATCH"` (ok. 15–25 min, ok. 10 GB; wagi Hunyuan turbo + bpy + PrusaSlicer).
+- Skrypty w `pipeline/` mają ścieżki ze starego scratchpada. Przed użyciem popraw zmienne na górze plików.
 
 ## Pierwsze 5 minut sesji (zanim cokolwiek zbudujesz)
 1. Sieć: `curl -s -o /dev/null -w '%{http_code}' https://huggingface.co/api/spaces/microsoft/TRELLIS.2`. Blokadę zgłoś raz, z dokładnymi krokami:
@@ -68,4 +94,4 @@ Repo na figurki D&D do druku żywicznego, robione z concept artu. Każda postać
 ## Postacie
 | Folder | Status | Finalny plik |
 |---|---|---|
-| `models/bandaged-druid/` | v5 gotowa („wygląda całkiem nieźle”) | `print/druid_mini_v5.3mf` |
+| `models/bandaged-druid/` | v5 gotowa („wygląda całkiem nieźle”), czeka na test druku na Banachu | `print/druid_mini_v5.3mf`, `print/gcode_fdm/druid_banach_school_150pct.gcode` |

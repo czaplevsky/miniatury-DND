@@ -1,4 +1,4 @@
-# Figurki D&D do druku
+# miniatury-DND: figurki D&D do druku
 
 Warsztat na figurki D&D do druku żywicznego, robione z concept artu. Skala 32 mm heroic: postać 1,90 m ma 36 mm, podstawka 25 × 3 mm.
 

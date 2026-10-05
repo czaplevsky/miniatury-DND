@@ -209,3 +209,12 @@ Priorytety poprawek: [1. …, 2. …, 3. …]. Znane pułapki: [FVOX ≥0,032 na
 Stop: DoD spełnione ALBO 3 próby bez poprawy ALBO koniec budżetu [T] h. Pracuj do wyczerpania budżetu, nie pytaj o drobiazgi.
 Wynik: [REPO]/print/NAZWA_vN.3mf + _stl.zip, renders/vN_*.png, zaktualizowany HANDOFF.md, raport ≤10 linii.
 ```
+
+---
+
+## Dopisek po teście druku (2026-10-05)
+- **Błąd:** przez cały projekt zakładałem drukarkę żywiczną. Na starcie użytkownik odpowiedział „jeszcze nie wiem”, a ja do tego pytania nie wróciłem przed oddaniem plików. Okazało się, że ma **Banach 3D (FDM)**. Wysłany 3MF „ruszył”, ale dysza się nie grzała: 3MF to sama geometria, a Banach drukuje wyłącznie `.gcode`.
+- **Zasada:** zanim oddasz pliki do druku, potwierdź drukarkę (marka, model, technologia) i sposób wysyłania. Oddawaj zawsze **gotowy, sprawdzony G-code** dla tej drukarki, nie tylko 3MF/STL. Do tego instrukcja: slicer, profil, jak sprawdzić linie grzania.
+- **Weryfikacja G-code:** `grep -n -m6 -E '^M(104|109|140|190)'` musi pokazać S > 0 przed pierwszą ekstruzją. Model musi mieścić się na stole. Podaj czas i ilość filamentu. Rozróżniaj przyczyny: jeśli zadana temperatura jest ustawiona, a odczyt stoi, to sprzęt; jeśli zadana wynosi 0 albo brak komend, to plik.
+- **FDM a detal:** mini 36 mm z dyszą 0,4 traci twarz, palce i fakturę. Domyślnie proponuj skalę 150% (ok. 4 h 50 min, 16 g PLA) albo usługę druku żywicznego.
+- **Repo:** integracja GitHub nie zakłada repozytoriów (403, także `gh api`). Repo zakłada użytkownik, potem `add_repo`. Centrum dowodzenia to `czaplevsky/miniatury-DND`.
